@@ -1,54 +1,650 @@
-const productImage =
-    document.getElementById("productImage");
+:root {
 
-const productVisual =
-    document.querySelector(".product-visual");
+    --black: #080808;
+
+    --black-light: #111111;
+
+    --white: #f4f1ec;
+
+    --grey: #8c8c8c;
+
+    --red: #e30613;
+
+    --border: rgba(255,255,255,.14);
+
+}
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--black);
+
+    color: var(--white);
+
+    font-family: "DM Sans", sans-serif;
+
+    min-height: 100vh;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
 
 
 /* =========================================
-   IMAGE PARALLAX
+   HEADER
 ========================================= */
 
-productVisual.addEventListener("mousemove", (event) => {
+.header {
 
-    const rect =
-        productVisual.getBoundingClientRect();
+    height: 90px;
 
-    const x =
-        (event.clientX - rect.left) / rect.width;
+    padding: 0 5vw;
 
-    const y =
-        (event.clientY - rect.top) / rect.height;
+    border-bottom: 1px solid var(--border);
 
+    display: grid;
 
-    const moveX =
-        (x - 0.5) * 10;
+    grid-template-columns: 1fr 1fr 1fr;
 
-    const moveY =
-        (y - 0.5) * 10;
+    align-items: center;
+
+}
 
 
-    productImage.style.transform =
-        `scale(1.06) translate(${moveX}px, ${moveY}px)`;
+.event-logo {
 
-});
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
 
 
-productVisual.addEventListener("mouseleave", () => {
+.logo-symbol {
 
-    productImage.style.transform =
-        "scale(1) translate(0,0)";
+    width: 38px;
 
-});
+    height: 38px;
+
+    background: var(--red);
+
+    display: grid;
+
+    place-items: center;
+
+    font-weight: 700;
+
+}
+
+
+.logo-name strong {
+
+    display: block;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.logo-name span {
+
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: #999;
+
+    margin-top: 3px;
+
+}
+
+
+.header-title {
+
+    text-align: center;
+
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    font-weight: 600;
+
+}
+
+
+.header-event {
+
+    text-align: right;
+
+    color: var(--red);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
 
 
 
 /* =========================================
-   PAGE LOAD ANIMATION
+   PRODUCT PAGE
 ========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+.product-page {
 
-    document.body.classList.add("loaded");
+    width: min(1400px, 90vw);
 
-});
+    margin: auto;
+
+    min-height: calc(100vh - 150px);
+
+    display: grid;
+
+    grid-template-columns: 1.1fr .9fr;
+
+    gap: 5vw;
+
+    align-items: center;
+
+}
+
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.product-visual {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #171717;
+
+    aspect-ratio: 4 / 5;
+
+}
+
+
+.product-visual img {
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1s cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+.product-visual:hover img {
+
+    transform: scale(1.06);
+
+}
+
+
+.image-number {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 10px;
+
+    left: 25px;
+
+    font-family: "Playfair Display";
+
+    font-size: 40px;
+
+    color: var(--red);
+
+}
+
+
+.image-caption {
+
+    position: absolute;
+
+    left: 25px;
+
+    bottom: 25px;
+
+    z-index: 2;
+
+}
+
+
+.image-caption span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #bbb;
+
+}
+
+
+.image-caption strong {
+
+    display: block;
+
+    font-family: "Playfair Display";
+
+    font-size: 18px;
+
+    margin-top: 4px;
+
+}
+
+
+
+/* =========================================
+   COMPANY
+========================================= */
+
+.company {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.company-logo {
+
+    width: 48px;
+
+    height: 48px;
+
+    border: 1px solid var(--red);
+
+    color: var(--red);
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    font-family: "Playfair Display";
+
+    font-size: 23px;
+
+}
+
+
+.company span {
+
+    display: block;
+
+    color: var(--grey);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.company strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    margin-top: 3px;
+
+}
+
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: .9;
+
+    font-weight: 500;
+
+    letter-spacing: -3px;
+
+}
+
+
+.description {
+
+    max-width: 520px;
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+    margin-top: 35px;
+
+}
+
+
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.information {
+
+    margin-top: 45px;
+
+    border-top: 1px solid var(--border);
+
+}
+
+
+.information-row {
+
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.information-row span {
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.information-row strong {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+
+/* =========================================
+   COMPANY BUTTON
+========================================= */
+
+.company-button {
+
+    margin-top: 35px;
+
+    background: var(--red);
+
+    color: white;
+
+    min-height: 62px;
+
+    padding: 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    transition:
+
+        background .3s ease,
+
+        transform .3s ease;
+
+}
+
+
+.company-button span {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 600;
+
+}
+
+
+.company-button strong {
+
+    font-size: 23px;
+
+    transition: transform .3s ease;
+
+}
+
+
+.company-button:hover {
+
+    background: #ff1724;
+
+    transform: translateY(-4px);
+
+}
+
+
+.company-button:hover strong {
+
+    transform: translate(5px,-5px);
+
+}
+
+
+
+/* =========================================
+   SOURCE NOTE
+========================================= */
+
+.source-note {
+
+    margin-top: 20px;
+
+    color: #666;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+
+}
+
+
+.source-note span {
+
+    color: #888;
+
+}
+
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    border-top: 1px solid var(--border);
+
+    min-height: 60px;
+
+    padding: 0 5vw;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:800px) {
+
+    .header {
+
+        height: 75px;
+
+        grid-template-columns: 1fr 1fr;
+
+        padding: 0 20px;
+
+    }
+
+
+    .header-title {
+
+        text-align: right;
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+    }
+
+
+    .header-event {
+
+        display: none;
+
+    }
+
+
+    .logo-name {
+
+        display: none;
+
+    }
+
+
+    .product-page {
+
+        width: 100%;
+
+        padding: 30px 20px 60px;
+
+        display: block;
+
+    }
+
+
+    .product-visual {
+
+        aspect-ratio: 4 / 5;
+
+    }
+
+
+    .product-information {
+
+        padding-top: 50px;
+
+    }
+
+
+    h1 {
+
+        font-size: 60px;
+
+    }
+
+
+    .information-row {
+
+        grid-template-columns: 120px 1fr;
+
+    }
+
+
+    footer {
+
+        padding: 20px;
+
+        gap: 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+}
