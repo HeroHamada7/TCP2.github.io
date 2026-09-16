@@ -1,22 +1,14 @@
 
-/* =====================================================
-   THE CHARCOAL PROJECT — MONARCH BED
-   RESPONSIVE CSS
-===================================================== */
-
-/* =====================================================
-   VARIABLES
-===================================================== */
 
 :root {
-    --background: #978174;
+    --background: #FFF;
     --background-dark: #8d7568;
 
-    --white: #ffffff;
-    --white-soft: rgba(255, 255, 255);
-    --white-muted: rgba(255, 255, 255);
+    --white: #978174;
+    --white-soft: #978174 ;
+    --white-muted: #8d7568;
 
-    --border: rgba(255, 255, 255);
+    --border: #978174;
 
     --black: #111111;
 }
@@ -32,7 +24,10 @@
     box-sizing: border-box;
 
     font-family:
-        "Bodoni MT";
+        "Bodoni MT",
+         "Bodoni 72",
+            Didot,
+        "Playfair Display", serif;
 }
 
 html {
@@ -311,46 +306,15 @@ a {
 .image-caption strong {
     font-family:
         "Bodoni MT",
-        "Bodoni 72",
-        Didot,
-        serif;
+         "Bodoni 72",
+            Didot,
+        "Playfair Display", serif;
 
     font-size: 17px;
 
     letter-spacing: 1px;
 }
 
-
-/* =====================================================
-   IMAGE CORNER DETAILS
-===================================================== */
-
-.image-corner {
-    position: absolute;
-
-    z-index: 3;
-
-    width: 35px;
-    height: 35px;
-
-    pointer-events: none;
-}
-
-.top-left {
-    top: 20px;
-    right: 20px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.7);
-    border-right: 1px solid rgba(255, 255, 255, 0.7);
-}
-
-.bottom-right {
-    bottom: 20px;
-    right: 20px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
-    border-right: 1px solid rgba(255, 255, 255, 0.7);
-}
 
 
 /* =====================================================
@@ -443,10 +407,9 @@ a {
 h1 {
     font-family:
         "Bodoni MT",
-        "Bodoni 72",
-        Didot,
-        "Times New Roman",
-        serif;
+         "Bodoni 72",
+            Didot,
+        "Playfair Display", serif;
 
     font-size: clamp(55px, 7vw, 105px);
 
@@ -560,7 +523,8 @@ h1 span {
 
     padding: 0 25px;
 
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    border: 1px solid #978174;
+    /* border: #978174; */
 
     background: transparent;
 
@@ -662,33 +626,6 @@ h1 span {
    FOOTER
 ===================================================== */
 
-footer {
-    min-height: 60px;
-
-    padding: 0 5vw;
-
-    border-top: 1px solid var(--border);
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr 1fr;
-
-    align-items: center;
-
-    font-size: 8px;
-
-    letter-spacing: 2.5px;
-
-    color: var(--white-muted);
-}
-
-.footer-center {
-    text-align: center;
-}
-
-.footer-location {
-    text-align: right;
-}
 
 
 /* =====================================================
@@ -1254,7 +1191,7 @@ footer {
         color: var(--white);
 
         border-color:
-            rgba(255, 255, 255, 0.55);
+            #978174;
 
         transform: none;
     }
