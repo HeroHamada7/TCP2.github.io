@@ -184,7 +184,7 @@ a {
 
     height: auto;
 
-    max-height: 90px;
+    max-height: 100px;
 
     object-fit: contain;
 }
@@ -941,7 +941,7 @@ footer {
     }
 
     .logo-name img {
-        width: 135px;
+        width: auto;
         max-width: 100%;
     }
 
@@ -1122,7 +1122,7 @@ footer {
     }
 
     .logo-name img {
-        width: 112px;
+        width: auto;
     }
 
 
@@ -1211,7 +1211,7 @@ footer {
     }
 
     .logo-name img {
-        width: 100px;
+        width: auto;
     }
 
     .product-page {
